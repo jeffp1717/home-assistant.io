@@ -52,6 +52,20 @@ to the element's `style:` configuration. This is quite useful when building a
 [Picture Elements][picture-elements] card that will be viewed mostly in a
 mobile browser. (@Toast)
 
+### {% linkable_title Hide Media Player Entities When Not Playing %}
+
+If you want to have a card that will only show a media player device in a media-control card when the media player is playing, you can use an individual entity-filter card per media player. They will take up no visible space in your frontend until the media player is activated to play media.
+
+- type: entity-filter
+        entities:
+        - entity: media_player.xxxxxx
+        state_filter:
+          - "playing"
+        card:
+          type: media-control
+          entity: media_player.xxxxxx
+        show_empty: false
+
 [@dale3h]: https://github.com/dale3h
 [@thomasloven]: https://github.com/thomasloven
 
